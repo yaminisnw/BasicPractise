@@ -1,0 +1,56 @@
+{
+  "elements": {
+    "AppDataBase": {
+      "id": {
+        "library_uri": "package:drift_practice/data/db/app_db.dart",
+        "name": "AppDataBase"
+      },
+      "declaration": {
+        "source_uri": "package:drift_practice/data/db/app_db.dart",
+        "offset": 251,
+        "name": "AppDataBase"
+      },
+      "references": [
+        {
+          "library_uri": "package:drift_practice/data/db/product.dart",
+          "name": "products"
+        },
+        {
+          "library_uri": "package:drift_practice/data/db/details.dart",
+          "name": "details"
+        },
+        {
+          "library_uri": "package:drift_practice/models/product_model.dart",
+          "name": "product_view"
+        }
+      ],
+      "type": "database",
+      "tables": [
+        {
+          "library_uri": "package:drift_practice/data/db/product.dart",
+          "name": "products"
+        },
+        {
+          "library_uri": "package:drift_practice/data/db/details.dart",
+          "name": "details"
+        }
+      ],
+      "views": [
+        {
+          "library_uri": "package:drift_practice/models/product_model.dart",
+          "name": "product_view"
+        }
+      ],
+      "includes": [],
+      "queries": [],
+      "schema_version": 3,
+      "daos": []
+    }
+  },
+  "imports": [
+    "package:drift/drift.dart",
+    "package:drift_practice/data/db/product.dart",
+    "package:drift_practice/models/product_model.dart",
+    "package:drift_practice/data/db/details.dart"
+  ]
+}

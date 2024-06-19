@@ -1,0 +1,140 @@
+{
+  "elements": {
+    "product_view": {
+      "id": {
+        "library_uri": "package:drift_practice/models/product_model.dart",
+        "name": "product_view"
+      },
+      "declaration": {
+        "source_uri": "package:drift_practice/models/product_model.dart",
+        "offset": 858,
+        "name": "ProductView"
+      },
+      "references": [
+        {
+          "library_uri": "package:drift_practice/data/db/product.dart",
+          "name": "products"
+        },
+        {
+          "library_uri": "package:drift_practice/data/db/details.dart",
+          "name": "details"
+        }
+      ],
+      "type": "view",
+      "columns": [
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "title",
+          "nameInDart": "title",
+          "declaration": {
+            "source_uri": "package:drift_practice/models/product_model.dart",
+            "offset": 858,
+            "name": "ProductView"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [
+            {
+              "type": "generated_as",
+              "dart_expression": {
+                "elements": [
+                  "products.title"
+                ]
+              },
+              "stored": false
+            }
+          ],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "name",
+          "nameInDart": "name",
+          "declaration": {
+            "source_uri": "package:drift_practice/models/product_model.dart",
+            "offset": 858,
+            "name": "ProductView"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [
+            {
+              "type": "generated_as",
+              "dart_expression": {
+                "elements": [
+                  "details.name"
+                ]
+              },
+              "stored": false
+            }
+          ],
+          "customConstraints": null
+        }
+      ],
+      "entity_info_name": "$ProductViewView",
+      "existing_data_class": null,
+      "custom_parent_class": null,
+      "name_of_row_class": "ProductViewData",
+      "name_of_companion_class": null,
+      "source": {
+        "kind": "dart",
+        "query": {
+          "elements": [
+            " .join([",
+            {
+              "lexeme": "innerJoin",
+              "import_uri": "package:drift/src/runtime/query_builder/query_builder.dart"
+            },
+            "(details,details.productId.equalsExp(products.id))])"
+          ]
+        },
+        "primaryFrom": {
+          "table": {
+            "library_uri": "package:drift_practice/data/db/product.dart",
+            "name": "products"
+          },
+          "name": "products"
+        },
+        "staticReferences": [
+          {
+            "table": {
+              "library_uri": "package:drift_practice/data/db/product.dart",
+              "name": "products"
+            },
+            "name": "products"
+          },
+          {
+            "table": {
+              "library_uri": "package:drift_practice/data/db/details.dart",
+              "name": "details"
+            },
+            "name": "details"
+          }
+        ],
+        "staticSource": "products"
+      }
+    }
+  },
+  "imports": [
+    "package:built_value/built_value.dart",
+    "package:built_value/serializer.dart",
+    "package:drift/drift.dart",
+    "package:drift_practice/models/serializers.dart",
+    "package:drift_practice/data/db/details.dart",
+    "package:drift_practice/data/db/product.dart"
+  ]
+}

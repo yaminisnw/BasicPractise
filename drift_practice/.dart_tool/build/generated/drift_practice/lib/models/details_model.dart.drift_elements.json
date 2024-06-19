@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:built_value/built_value.dart","transitive":false},{"uri":"package:built_value/serializer.dart","transitive":false},{"uri":"package:drift/drift.dart","transitive":false},{"uri":"package:drift_practice/models/serializers.dart","transitive":false},{"uri":"package:drift_practice/data/db/details.dart","transitive":false}],"elements":[]}

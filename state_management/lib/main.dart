@@ -1,76 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
+import 'package:state_management/counterModel.dart';
 import 'package:state_management/home_screen.dart';
 
-import 'login_page.dart';
-
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences.setMockInitialValues({});
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  bool isLogin = prefs.getBool('isLogin') ?? false;
-  runApp(MyApp(
-    isLogin: isLogin,
-  ));
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final bool isLogin;
-  const MyApp({super.key, required this.isLogin});
+  const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      create: (context) => CounterModel(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Counter App',
+        theme: ThemeData(primarySwatch: Colors.cyan),
+        home: const HomeScreen(),
       ),
-      home: isLogin ? HomeScreen() : LoginPage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Text('Counter: $_counter'),
-        ElevatedButton(
-          onPressed: _incrementCounter,
-          child: Text('Increment'),
-        ),
-      ], // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

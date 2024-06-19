@@ -1,0 +1,142 @@
+{
+  "elements": {
+    "details": {
+      "id": {
+        "library_uri": "package:drift_practice/data/db/details.dart",
+        "name": "details"
+      },
+      "declaration": {
+        "source_uri": "package:drift_practice/data/db/details.dart",
+        "offset": 96,
+        "name": "Details"
+      },
+      "references": [
+        {
+          "library_uri": "package:drift_practice/data/db/product.dart",
+          "name": "products"
+        }
+      ],
+      "type": "table",
+      "columns": [
+        {
+          "sqlType": {
+            "builtin": "int"
+          },
+          "nullable": false,
+          "nameInSql": "id",
+          "nameInDart": "id",
+          "declaration": {
+            "source_uri": "package:drift_practice/data/db/details.dart",
+            "offset": 136,
+            "name": "id"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [
+            {
+              "type": "primary",
+              "is_auto_increment": true
+            }
+          ],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "string"
+          },
+          "nullable": false,
+          "nameInSql": "name",
+          "nameInDart": "name",
+          "declaration": {
+            "source_uri": "package:drift_practice/data/db/details.dart",
+            "offset": 188,
+            "name": "name"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "int"
+          },
+          "nullable": false,
+          "nameInSql": "product_id",
+          "nameInDart": "productId",
+          "declaration": {
+            "source_uri": "package:drift_practice/data/db/details.dart",
+            "offset": 281,
+            "name": "productId"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": "///ProductId is same id that we have is products table.",
+          "constraints": [
+            {
+              "type": "foreign_key",
+              "column": {
+                "table": {
+                  "library_uri": "package:drift_practice/data/db/product.dart",
+                  "name": "products"
+                },
+                "name": "id"
+              },
+              "onUpdate": null,
+              "onDelete": null
+            }
+          ],
+          "customConstraints": null
+        },
+        {
+          "sqlType": {
+            "builtin": "int"
+          },
+          "nullable": false,
+          "nameInSql": "price",
+          "nameInDart": "price",
+          "declaration": {
+            "source_uri": "package:drift_practice/data/db/details.dart",
+            "offset": 386,
+            "name": "price"
+          },
+          "typeConverter": null,
+          "clientDefaultCode": null,
+          "defaultArgument": null,
+          "overriddenJsonName": null,
+          "referenceName": null,
+          "documentationComment": null,
+          "constraints": [],
+          "customConstraints": null
+        }
+      ],
+      "existing_data_class": null,
+      "table_constraints": [],
+      "custom_parent_class": null,
+      "fixed_entity_info_name": null,
+      "base_dart_name": "Details",
+      "row_class_name": "Detail",
+      "companion_class_name": null,
+      "without_rowid": false,
+      "strict": false,
+      "write_default_constraints": true,
+      "custom_constraints": [],
+      "attached_indices": []
+    }
+  },
+  "imports": [
+    "package:drift/drift.dart",
+    "package:drift_practice/data/db/product.dart"
+  ]
+}
